@@ -90,17 +90,6 @@ public:
     void insert_rev_index(std::string word, std::string link, int score);
 
     std::string select_link(int& id);
-    
-
-////// A NE PAS PRENDRE EN COMPTE ////////////////
-    template <typename T1>
-    void insert_table_websites(T1 & website);
-
-    template <typename T2>
-    void insert_table_revindex(T2 & link);
-
-    void insert_table_waitlist(std::string& link);
-///////////////////////////////////////////////////
 
 
     // Constructeur
