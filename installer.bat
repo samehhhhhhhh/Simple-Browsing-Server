@@ -36,7 +36,7 @@ for %%i in (%libraries%) do (
     )
 )
 
-./build/windows/x64/release/simple_server.exe
+simple_server.exe
 python crawler.py
 
 goto :eof
