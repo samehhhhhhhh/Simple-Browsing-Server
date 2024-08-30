@@ -6,6 +6,8 @@ Still in dev...
 
 Last stuff to do :
 
+//// Completely remake with SQL server for better performance scalability security and reliability... Still some time to go ////
+
 - Make security patches
 - Add linux installer
 - add a simple API
