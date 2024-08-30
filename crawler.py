@@ -18,7 +18,7 @@ def web_scraper():
 
         res = conn.execute("SELECT * FROM waitlist ORDER BY RANDOM() LIMIT 1")
         
-        while res is None:
+        while res.fetchone() is None:
             res = conn.execute("SELECT * FROM waitlist ORDER BY RANDOM() LIMIT 1")
             
         url = res.fetchone()[0]  
