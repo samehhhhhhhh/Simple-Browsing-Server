@@ -9,14 +9,13 @@ from colorama import Fore
 def read_threads():
     with open('config.json', 'r') as json_file:
         json_object = json.load(json_file)
-        return int(json_object['max_threads'])  # Vérifiez que cette clé existe
-
+        return int(json_object['max_threads'])  
 def web_scraper():
     
     conn = sqlite3.connect('database.db')
     try:
         res = conn.execute("SELECT * FROM waitlist ORDER BY RANDOM() LIMIT 1")
-        url = res.fetchone()[0]  # Récupérer l'URL correctement
+        url = res.fetchone()[0]  
 
         response = requests.get(url)
 
@@ -56,11 +55,6 @@ def web_scraper():
             return f"Unable to access the website. Status code: {response.status_code}"
     finally:
         conn.close()
-
-
-    
-
-
 
 if __name__ == "__main__":
     while True:
