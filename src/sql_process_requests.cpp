@@ -21,10 +21,8 @@ int sqlite_hand::id_request()
         std::cerr << "\x1B[31m[ERROR]\033[0m" << " SQL error in SELECT ID: " << errMsg << std::endl;
         sqlite3_free(errMsg);
     } else if (selected_id == -1) {
-        std::cerr << "\x1B[31m[ERROR]\033[0m" << " No unprocessed row found." << std::endl;
-        
-        sqlite3_close(DB);
-        
+        selected_id = -1;
+           
     } else {
         std::cout << "\x1B[32m[OK]\033[0m" << " Random Column selected" << std::endl;
         

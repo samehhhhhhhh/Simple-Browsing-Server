@@ -7,10 +7,20 @@ void processer::tf()
     // External Clases
     algorithm algo;
     sqlite_hand sql;
+    int id = -1;
 
+    id = sql.id_request();
+    if (!(id != -1)) {
+        std::cerr << "\x1B[31m[ERROR]\033[0m" << " No unprocessed row found." << std::endl;
+        while (!(id != -1)){
+        
+        id = sql.id_request();
+        }
+
+    }
+    
     // Query SQL pour récupérer un lien et le texte assemblée 
     // (Titre + sous-titre + texte) D'une meme row choisie au hasard dans la table website.
-    int id = sql.id_request();
     sql.update_request(id);
     std::string link = sql.select_link(id);
     std::string content = sql.select_request(id);
