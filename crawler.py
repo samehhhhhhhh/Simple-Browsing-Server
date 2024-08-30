@@ -5,6 +5,7 @@ import json
 import concurrent.futures
 import sqlite3
 from colorama import Fore
+import sys
 
 def read_threads():
     with open('config.json', 'r') as json_file:
@@ -14,7 +15,12 @@ def web_scraper():
     
     conn = sqlite3.connect('database.db')
     try:
+
         res = conn.execute("SELECT * FROM waitlist ORDER BY RANDOM() LIMIT 1")
+        
+        while res is None:
+            res = conn.execute("SELECT * FROM waitlist ORDER BY RANDOM() LIMIT 1")
+            
         url = res.fetchone()[0]  
 
         response = requests.get(url)
@@ -63,6 +69,7 @@ if __name__ == "__main__":
             print(Fore.WHITE + "[" + Fore.GREEN + "OK" + Fore.WHITE + "] - Website found")
         except Exception as e:
             print(Fore.WHITE + "[" + Fore.RED + "ERROR" + Fore.WHITE + f"] - {e}")
+            sys.exit(1)
 
 
     
