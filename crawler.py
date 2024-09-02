@@ -11,7 +11,8 @@ def web_scraper():
         url_row = res.fetchone()
 
         if url_row is None:
-            print("No URLs found in the waitlist.")
+            print("No URLs found in the waitlist. using default link -> wikipedia.com")
+            conn.execute("INSERT INTO waitlist (Link) VALUES ('https://wikipedia.com')")
             return
 
         url = url_row[0]

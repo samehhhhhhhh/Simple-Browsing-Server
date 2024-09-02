@@ -11,7 +11,9 @@ int main() {
 
     // Boucle infini
     while(true) {
+        system("python3 crawler.py");
         process.tf();
+        
     }
 
     return 0;
