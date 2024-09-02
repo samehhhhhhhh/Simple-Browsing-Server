@@ -36,9 +36,8 @@ for %%i in (%libraries%) do (
     )
 )
 
-start cmd /k "simple_server.exe"
+simple_server.exe
 
-start cmd /k "python crawler.py"
 
 goto :eof
 

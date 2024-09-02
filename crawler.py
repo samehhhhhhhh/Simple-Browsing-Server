@@ -54,11 +54,12 @@ def web_scraper():
         }
 
 if __name__ == "__main__":
-    while True:
-        try:
-            result = web_scraper()
-            if result:
-                print(Fore.WHITE + "[" + Fore.GREEN + "OK" + Fore.WHITE + "] - Website found")
-        except Exception as e:
-            print(Fore.WHITE + "[" + Fore.RED + "ERROR" + Fore.WHITE + f"] - {e}")
-            sys.exit(1)
+    
+    
+    try:
+        result = web_scraper()
+        if result:
+            print(Fore.WHITE + "[" + Fore.GREEN + "OK" + Fore.WHITE + "] - Website found")
+    except Exception as e:
+        print(Fore.WHITE + "[" + Fore.RED + "ERROR" + Fore.WHITE + f"] - {e}")
+        sys.exit(1)
