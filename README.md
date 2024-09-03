@@ -6,9 +6,10 @@ Still in dev...
 
 Last stuff to do :
 
-//// Completely remake with SQL server for better performance scalability security and reliability... Still some time to go ////
+
 
 - Make security patches
-- Add linux installer
-- add a simple API
+- Make more configurability with config.json
+- Make more aesthetic default pages
+- make releases for you all to install.
 - Complete de Readme for you all ;)
