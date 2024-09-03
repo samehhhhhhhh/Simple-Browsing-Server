@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        #search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+        #search-bar input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+        }
+        #search-bar button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #1e1e1e;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .link {
+            margin-bottom: 10px;
+        }
+        .link a {
+            text-decoration: none;
+            color: #00aaff;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-bar">
+        <form action="/results" method="get">
+            <input type="text" name="query" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <h1>Search Results</h1>
+    <ul>
+        {% for link, score in top_links %}
+            <li class="link">
+                <a href="{{ link }}">{{ link }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
