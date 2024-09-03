@@ -12,10 +12,7 @@ void processer::tf()
     id = sql.id_request();
     if (!(id != -1)) {
         std::cerr << "\x1B[31m[ERROR]\033[0m" << " No unprocessed row found." << std::endl;
-        while (!(id != -1)){
         
-        id = sql.id_request();
-        }
 
     }
     

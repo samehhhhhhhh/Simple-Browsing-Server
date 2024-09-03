@@ -74,7 +74,6 @@ std::string sqlite_hand::select_request(int& id)
         sqlite3_free(errMsg);
         return "Error";
     } else {
-        std::cout << "Assembled string: " << result << std::endl;
         return result;
     }
     
